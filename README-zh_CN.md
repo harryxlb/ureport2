@@ -11,7 +11,7 @@ UReport2是第一款基于Apache-2.0协议开源的中式报表引擎。
 
 # UReport商业版BaskReport
 
-全新的算法实现，百万条数据秒级呈现，低至1000元/年，BaskReport产品咨询与技术讨论QQ群：742169613，产品官网：https://www.basksoft.com
+全新的算法实现，百万条数据秒级呈现，不限产品功能、不限项目类型、低至1000元/年/项目，BaskReport产品咨询与技术讨论QQ群：742169613，产品官网：https://www.basksoft.com
 
 # QQ群
 
