@@ -17,7 +17,7 @@ package com.bstek.ureport.export.pdf;
 
 import java.util.List;
 
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 
 import com.bstek.ureport.build.paging.HeaderFooter;
 import com.bstek.ureport.build.paging.Page;

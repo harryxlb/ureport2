@@ -25,11 +25,12 @@ import java.awt.image.BufferedImage;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.util.List;
+import java.util.Base64;
 
 import javax.imageio.ImageIO;
 import javax.imageio.stream.MemoryCacheImageOutputStream;
 
-import org.springframework.util.Base64Utils;
+//import org.springframework.util.Base64Utils;
 
 import com.bstek.ureport.cache.ResourceCache;
 import com.bstek.ureport.definition.CellDefinition;
@@ -190,7 +191,7 @@ public class SlashBuilder {
 		try{
 			ImageIO.write(image, "png", memoryImage);
 			imageBytes=byteOutput.toByteArray();
-			String base64Data=Base64Utils.encodeToString(imageBytes);
+			String base64Data=Base64.getEncoder().encodeToString(imageBytes);
 			content.setBase64Data(base64Data);
 		}catch(Exception ex){
 			throw new ReportComputeException(ex);

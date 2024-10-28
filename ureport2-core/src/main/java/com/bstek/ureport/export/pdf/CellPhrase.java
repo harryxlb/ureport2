@@ -15,7 +15,7 @@
  ******************************************************************************/
 package com.bstek.ureport.export.pdf;
 
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 
 import com.bstek.ureport.definition.CellStyle;
 import com.bstek.ureport.export.pdf.font.FontBuilder;

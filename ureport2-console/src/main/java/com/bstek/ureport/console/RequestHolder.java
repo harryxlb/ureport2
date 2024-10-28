@@ -15,7 +15,7 @@
  ******************************************************************************/
 package com.bstek.ureport.console;
 
-import javax.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletRequest;
 
 /**
  * @author Jacky.gao

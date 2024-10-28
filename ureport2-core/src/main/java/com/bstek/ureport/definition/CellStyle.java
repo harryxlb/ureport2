@@ -18,7 +18,7 @@ package com.bstek.ureport.definition;
 import java.awt.Font;
 import java.io.Serializable;
 
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.codehaus.jackson.annotate.JsonIgnore;
 
 import com.bstek.ureport.export.pdf.font.FontBuilder;

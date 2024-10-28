@@ -19,11 +19,11 @@ import java.io.IOException;
 import java.io.OutputStream;
 import java.util.Map;
 
-import javax.servlet.ServletException;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 
 import com.bstek.ureport.build.ReportBuilder;
 import com.bstek.ureport.console.BaseServletAction;
@@ -68,7 +68,8 @@ public class ExportWordServletAction extends BaseServletAction {
 			String fileName=req.getParameter("_n");
 			fileName=buildDownloadFileName(file, fileName, ".docx");
 			fileName=new String(fileName.getBytes("UTF-8"),"ISO8859-1");
-			resp.setContentType("application/octet-stream;charset=ISO8859-1");
+//			resp.setContentType("application/octet-stream;charset=ISO8859-1");
+			resp.setContentType("application/octet-stream;charset=UTF-8");
 			resp.setHeader("Content-Disposition","attachment;filename=\"" + fileName + "\"");
 			Map<String, Object> parameters = buildParameters(req);
 			if(file.equals(PREVIEW_KEY)){

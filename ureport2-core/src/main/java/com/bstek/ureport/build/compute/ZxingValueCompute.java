@@ -26,7 +26,7 @@ import javax.imageio.ImageIO;
 
 import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang3.StringUtils;
-import org.springframework.util.Base64Utils;
+import java.util.Base64;
 
 import com.bstek.ureport.build.BindData;
 import com.bstek.ureport.build.Context;
@@ -137,7 +137,8 @@ public class ZxingValueCompute implements ValueCompute {
             ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
             ImageIO.write(image, "png", outputStream);
             byte[] bytes=outputStream.toByteArray();
-            String base64Data=Base64Utils.encodeToString(bytes);
+			// use java.util.Base64 instead of spring's Base64Utils
+            String base64Data = new String(Base64.getEncoder().encode(bytes));
             IOUtils.closeQuietly(outputStream);
             return new Image(base64Data,w,h);
         }catch(Exception ex){

@@ -18,7 +18,7 @@ package com.bstek.ureport.parser.impl.searchform;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.dom4j.Element;
 
 import com.bstek.ureport.definition.searchform.LabelPosition;

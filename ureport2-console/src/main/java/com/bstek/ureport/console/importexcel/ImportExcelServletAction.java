@@ -15,26 +15,22 @@
  ******************************************************************************/
 package com.bstek.ureport.console.importexcel;
 
-import java.io.File;
+import com.bstek.ureport.console.RenderPageServletAction;
+import com.bstek.ureport.console.cache.TempObjectCache;
+import com.bstek.ureport.definition.ReportDefinition;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import org.apache.commons.fileupload2.core.DiskFileItem;
+import org.apache.commons.fileupload2.core.DiskFileItemFactory;
+import org.apache.commons.fileupload2.jakarta.JakartaServletDiskFileUpload;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
-import javax.servlet.ServletException;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-
-import org.apache.commons.fileupload.FileItem;
-import org.apache.commons.fileupload.FileItemFactory;
-import org.apache.commons.fileupload.disk.DiskFileItemFactory;
-import org.apache.commons.fileupload.servlet.ServletFileUpload;
-
-import com.bstek.ureport.console.RenderPageServletAction;
-import com.bstek.ureport.console.cache.TempObjectCache;
-import com.bstek.ureport.definition.ReportDefinition;
 
 /**
  * @author Jacky.gao
@@ -46,16 +42,19 @@ public class ImportExcelServletAction extends RenderPageServletAction {
 		excelParsers.add(new HSSFExcelParser());
 		excelParsers.add(new XSSFExcelParser());
 	}
+
 	@Override
 	public void execute(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		String tempDir=System.getProperty("java.io.tmpdir");
-		FileItemFactory factory=new DiskFileItemFactory(1000240,new File(tempDir));
-		ServletFileUpload upload=new ServletFileUpload(factory);
+//		FileItemFactory factory=new DiskFileItemFactory(1000240,new File(tempDir));
+		DiskFileItemFactory factory = DiskFileItemFactory.builder().get();
+//		ServletFileUpload upload=new ServletFileUpload(factory);
+		JakartaServletDiskFileUpload upload=new JakartaServletDiskFileUpload(factory);
 		ReportDefinition report=null;
 		String errorInfo=null;
 		try {
-			List<FileItem> items=upload.parseRequest(req);
-			for(FileItem item:items){
+			List<DiskFileItem> items=upload.parseRequest(req);
+			for(DiskFileItem item:items){
 				String fieldName=item.getFieldName();
 				String name=item.getName().toLowerCase();
 				if(fieldName.equals("_excel_file") && (name.endsWith(".xls") || name.endsWith(".xlsx"))){

@@ -15,18 +15,18 @@
  ******************************************************************************/
 package com.bstek.ureport.console;
 
-import java.io.IOException;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 
-import javax.servlet.ServletException;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
 
 /**
  * @author Jacky.gao
  * @since 2017年1月25日
  */
 public interface ServletAction {
-	public static final String PREVIEW_KEY="p";
+	static final String PREVIEW_KEY="p";
 	void execute(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException;
 	String url();
 }

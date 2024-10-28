@@ -15,7 +15,7 @@
  ******************************************************************************/
 package com.bstek.ureport.expression.model.expr.cell;
 
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 
 import com.bstek.ureport.Utils;
 import com.bstek.ureport.build.Context;
