@@ -6,6 +6,14 @@ UReport2 provides the brand new web-based report designer that runs in mainstrea
 
 UReport2 is the first Chinese-style report engine based on Apache-2.0 License.
 
+# About this repository
+This repository based on UReport2 and forked from https://gitee.com/youseries_admin/ureport.
+## What's new
+### v3.0
+1. fixed: Velocity reports some "resource.loader deprecated" warnings
+2. added: JDK17 compiler config
+3. upgrade: javax.servlet-api 2.5 to jakarta.servlet-api 6.1.0, Spring 4.3.11.RELEASE to 6.1.14, commons-lang3 3.5 to 3.17.0...
+
 [中文 README](README-zh_CN.md)
 
 # Teaching video
@@ -85,6 +93,3 @@ By now, we have added UReport2 in a standard Maven project. Run the project, and
 * Adding blank line and paging
 * Load Pictures
 * Chromatography printing
-
-
-
