@@ -30,7 +30,7 @@ Firstly, we need to create a standard Maven project \(create a project with Ecli
 
 ```
 <dependency>
-    <groupId>com.bstek.ureport</groupId>
+    <groupId>io.github.harryxlb</groupId>
     <artifactId>ureport2-console</artifactId>
     <version>[version]</version>
 </dependency>

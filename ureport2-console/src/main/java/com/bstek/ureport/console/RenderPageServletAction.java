@@ -17,7 +17,6 @@ package com.bstek.ureport.console;
 
 import org.apache.velocity.app.VelocityEngine;
 import org.apache.velocity.runtime.RuntimeConstants;
-import org.apache.velocity.runtime.log.NullLogChute;
 import org.springframework.beans.BeansException;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
@@ -36,7 +35,7 @@ public abstract class RenderPageServletAction extends WriteJsonServletAction imp
 		ve = new VelocityEngine();
 		ve.setProperty("resource.loaders", "class");
 		ve.setProperty("resource.loader.class.class","org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader");
-		ve.setProperty(RuntimeConstants.RUNTIME_LOG_LOGSYSTEM,new NullLogChute());
-		ve.init();	
+		ve.setProperty(RuntimeConstants.RUNTIME_LOG_NAME, "ureport2-velocity-log");
+		ve.init();
 	}
 }
